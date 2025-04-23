@@ -10,8 +10,22 @@ class Node<E>
   }
 }
 
+
+
 public class ListaBasica 
 {
+	static String toString (Node <Integer> lde)
+	{
+		Node <Integer> aux = lde; //variable local auxiliar
+		String s = "";
+		while (aux != null)
+		{
+		s += aux.element + " ";
+		aux = aux.next;
+		}
+		return s;
+	}
+
   public static void main (String[] args) 
   {
     Node<Integer> lista; //variable tipo objeto
@@ -26,7 +40,7 @@ public class ListaBasica
               // new Node<Integer>(25, 
                 // new Node<Integer>(14, null)));
                  
-    // System.out.println(toString(lista));
+    System.out.println(toString(lista));
     // System.out.println(toStringRec(lista));   
   }
 }
