@@ -26,6 +26,14 @@ public class ListaBasica
 		return s;
 	}
 
+	static String toStringR (Node <Integer> lde)
+	{
+		if (lde == null)
+			return "";
+		else
+			return lde.element + " " +toStringR (lde.next);	
+	}
+
   public static void main (String[] args) 
   {
     Node<Integer> lista; //variable tipo objeto
