@@ -1,3 +1,4 @@
+package nodeStrR;
 /**
  * Operaciones de manejo de una lista enlazada de String(s) de tipo 
  * Node<String> (II)
@@ -17,19 +18,50 @@ class Node<E> {
 
 public class NodeStrROtra
 {
-  static String toString (Node<String> lds) 
+  //static String toString (Node<String> lds) igual que sin recursiva
 
-  static Node<String> borraU (Node<String> lds) 
+  //static Node<String> borraU (Node<String> lds) igual que sin recursiva
 
-  static Node<String> copia (Node<String> lds)
+  static Node<String> copia (Node<String> lds){
+    if (lds == null)
+      return null;
+    else
+      return new Node <String> (lds.element, copia (lds.next));
+  }
   
-  public static boolean esIgual (Node<String> una, Node<String> otra)
+  public static Node <String> inversa (Node <String> lds){
+    if (lds == null)
+      return null;
+    else
+      return add (inversa (lds.next), lds.element);
+  }
 
-  static Node<String> insertaO (Node<String> lds, String s) 
+  public static Node <String> interseccion (Node <String> una, Node <String> otra){
+    if (una == null)
+      return null;
+    else if (indexOf(otra, una.element) != -1)
+      return new Node <String> (una.element, interseccion(una.next, otra));
+    else
+      return interseccion(una.next, otra);
+  }
 
-  static Node<String> ordena (Node<String> lds) 
+  //public static boolean esIgual (Node<String> una, Node<String> otra){}
 
-  public static void main (String[] args) 
+  static Node<String> insertaO (Node<String> lds, String s) {
+    if ((lds == null) || (s.compareTo(lds.element) < 0))
+      return new Node <String> (s, lds);
+    else
+      return new Node <String> (lds.element, insertaO(lds.next, s));
+  }
+6
+  static Node<String> ordena (Node<String> lds) {
+    if (lds == null) 
+    return null;
+  else
+    return insertaO(ordena(lds.next), lds.element);
+  }
+
+  public static void main (String[] args) {}
   {
     Node<String> lds = null;
     lds = new Node<String>("tres", lds);

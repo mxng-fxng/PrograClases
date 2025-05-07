@@ -1,0 +1,44 @@
+ 1 /**
+ 2  */
+ 3 import stdlib.StdIn;
+ 4 
+ 5 public class Ficheros
+ 6 {
+ 7   final static int D = 100;
+ 8   
+ 9   public static String[] leer () 
+10   {
+11     String[] lineas = new String[D];
+12     int i = 0;
+13     while (!StdIn.isEmpty())
+14     {  
+15       lineas[i] = StdIn.readLine();
+16       i += 1;
+17     }   
+18     return lineas;
+19   }
+20   public static void escribir (String[] lineas) 
+21   {
+22     int i = 0;
+23     while (i < D && lineas[i] != null)
+24     {  
+25       System.out.println(lineas[i]);
+26       i += 1;
+27     }   
+28   }
+29   public static void numLineas (String[] lineas) 
+30   {
+31     int i = 0;
+32     while (i < D && lineas[i] != null)
+33     {  
+34       System.out.printf("%2s %s\n", i+1, lineas[i]);
+35       i += 1;
+36     }   
+37   }
+38   public static void main (String[] args) 
+39   {
+40     String[] lineas = leer();
+41     // escribir(lineas);
+42     numLineas(lineas);    
+43   }
+44 }

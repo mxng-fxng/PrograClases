@@ -8,14 +8,52 @@ import tads.LinkedStack;
  
 public class StackPrueba
 {
-  public static void push3YPop3 () 
+  public static void push3YPop3 (){
+    IStack <Integer> pila = new BoundedStack <Integer> (); //Puedes usar cualquier implementaci贸n ArrayStack o LinkedStack
+    //a帽ade a la pila
+    pila.push(3);
+    System.out.println(pila);
+    pila.push(5);
+    System.out.println(pila);
+    pila.push(7);
+    System.out.println(pila);
+    //borra
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+  } 
   
-  public static void push2YPop3 () 
+  public static void push2YPop3 (){
+    IStack <Integer> pila = new BoundedStack <Integer> (); //Puedes usar cualquier implementaci贸n ArrayStack o LinkedStack
+    //a帽ade a la pila
+    pila.push(3);
+    System.out.println(pila);
+    pila.push(5);
+    System.out.println(pila);
+
+    //borra
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+    System.out.println(pila.peek());//consulta que hay en la cima
+    pila.pop(); //lo borro
+    System.out.println(pila);
+    //salta una excepci贸n porque consulta el elemento de una pila vac铆a
+  }
   
  /*
   * Ejercicio: 
-      Cargar una pila con 3 n鷐eros e ir sac醤dolos uno a uno,
-      mostrando el n鷐ero que se saca en cada paso.
+      Cargar una pila con 3 n锟絤eros e ir sac锟絥dolos uno a uno,
+      mostrando el n锟絤ero que se saca en cada paso.
   */
   
   public static void main (String[] args) 
@@ -23,8 +61,9 @@ public class StackPrueba
     // System.out.println("push3YPop3() --> ");
     // push3YPop3();
     
-    // System.out.println("push2YPop3() -->");
-    // push2YPop3();
+    //trata la excepci贸n
+    System.out.println("push2YPop3() -->");
+    push2YPop3();
     
     System.out.println("fin");
   } 
