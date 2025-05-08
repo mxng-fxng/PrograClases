@@ -1,3 +1,0 @@
->javac -sourcepath src -d bin -cp lib/tads.jar;lib/stdlib.jar src/*.java
-
->java -cp bin;lib/tads.jar;lib/stdlib.jar Juego

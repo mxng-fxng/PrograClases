@@ -1,4 +1,3 @@
-package nodeStr;
 /**
  * Operaciones de manejo de una lista enlazada de String(s) de tipo Node<String> 
  *
@@ -9,7 +8,7 @@ package nodeStr;
  *           que ser funciones, no procedimientos.
  */
 
-class Node<E> {
+ class Node<E> {
   E element;
   Node<E> next;
 
