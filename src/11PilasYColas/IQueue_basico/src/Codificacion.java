@@ -7,13 +7,24 @@ import stdlib.StdIn;
 public class Codificacion
 {
   /*
-   * Lee caracteres de la entrada estándar y los escribe 
+   * Lee caracteres de la entrada estï¿½ndar y los escribe 
    * codificados.
    * Los caracteres vienen todos seguidos. El espacio y salto
-   * de línea son también caracteres. 
+   * de lï¿½nea son tambiï¿½n caracteres. 
    * El final viene marcado con <ctrl><z> o <ctrl><d>.
    */
-  public static void escribirCodificado () 
+  public static void escribirCodificado (){
+    IQueue<Character> buffer  = new ArrayQueue<Character>();
+    while (!StdIn.isEmpty()){
+      Character c = StdIn.readChar();
+      buffer.add((char)(c+1));
+    }
+    //bucle de ir tomando cada palabra de la pila y mostrandolo por pantalla
+    while (!buffer.isEmpty()) {
+      System.out.println(buffer.peek());
+      buffer.poll(); //borra lo que estÃ¡ en la cima
+    }
+  }
   
   /*
    * resultado: la longitud de texto 

@@ -1,12 +1,12 @@
-import stdlib.*;
+import stdlib.StdIn;
 import tads.*;
 
 public class Reves
 {
   /* 
-   * Lee números de la entrada estándar y los escribe al revés.
-   * Los números vienen separados por espacios o saltos
-   * de línea. 
+   * Lee nï¿½meros de la entrada estï¿½ndar y los escribe al revï¿½s.
+   * Los nï¿½meros vienen separados por espacios o saltos
+   * de lï¿½nea. 
    * El final viene marcado con <Ctrl-D>. En windows usar <Ctrl-Z>.
    * PAUTA:
    *   Utilizar una pila IStack<Integer>
@@ -20,14 +20,27 @@ public class Reves
   
   /*
    * escribirAlReves2 () 
-   *   Lee palabras de la entrada estándar y los escribe al revés.
+   *   Lee palabras de la entrada estï¿½ndar y los escribe al revï¿½s.
    *   Las palabras vienen separados por espacios o saltos
-   *   de línea. 
+   *   de lï¿½nea. 
    *   El final viene marcado con <Ctrl-D>. En windows usar <Ctrl-Z>.
    * PAUTA:
    *   Utilizar una pila IStack<String>
    */
-   public static void escribirAlReves2 () 
+   public static void escribirAlReves2 (){
+    IStack<String> pila = new ArrayStack<String>();
+    //bucle de lectura para leer de la entrada estandar
+    while (!StdIn.isEmpty()){
+      String pal = StdIn.readString();
+      pila.push(pal);
+    }
+    //bucle de ir tomando cada palabra de la pila y mostrandolo por pantalla
+    while (!pila.isEmpty()) {
+      System.out.println(pila.peek());
+      pila.pop(); //borra lo que estÃ¡ en la cima
+    }
+
+   } 
   
    //Prueba de longitud
   static void testLongitud () 
@@ -38,7 +51,7 @@ public class Reves
     pde.push(2);
     pde.push(3);
     System.out.println(longitud(pde));
-    System.out.println(pde); //Se queda vacía!
+    System.out.println(pde); //Se queda vacï¿½a!
   }
 
   public static void main (String[] args) 
