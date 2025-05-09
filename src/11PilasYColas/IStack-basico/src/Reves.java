@@ -39,7 +39,6 @@ public class Reves
       System.out.println(pila.peek());
       pila.pop(); //borra lo que está en la cima
     }
-
    } 
   
    //Prueba de longitud
