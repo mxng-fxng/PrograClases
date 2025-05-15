@@ -11,6 +11,8 @@ class Directivo extends Empleado
   {
     this(nombre, "", extras);
   }
+  
+  @Override
   public String toString () 
   { 
     return super.toString() + ", extras:" + extras; 
@@ -19,6 +21,7 @@ class Directivo extends Empleado
   {
     return extras; 
   }
+  @Override
   int sueldo () 
   {
     return super.sueldo() + extras; 

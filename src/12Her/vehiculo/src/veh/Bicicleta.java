@@ -1,22 +1,40 @@
 package veh;
+//tipo real
 /**
- * Implementación de Bicicleta
+ * Implementaciï¿½n de Bicicleta
  */
 public class Bicicleta extends Vehiculo
 {
   private double peso; 
 
-  public Bicicleta (String color, boolean electrica, double peso)
+  public Bicicleta (String color, boolean electrica, double peso){
+    super(color);
+    this.peso = peso;
+  }
   
-  public Bicicleta (String color, boolean electrica)
+  public Bicicleta (String color, boolean electrica){
+    super(color);
+    this.peso = 20;
+  }
   
   @Override
-  public String toString ()
+  public String toString (){
+    return super.toString() + " - Bici" + " - peso:" + peso;
+  }
   
-  public boolean esElectrica ()
+  //public boolean esElectrica (){}
 
-  public double peso () 
+  public double peso (){
+    return peso;
+  }
 
+ @Override
   public boolean equals (Object obj) 
+  {   
+    return 
+      obj instanceof Bici && 
+      super.equals((Bici)obj) && 
+      peso == ((Bici)obj).peso;
+  } 
 
 }

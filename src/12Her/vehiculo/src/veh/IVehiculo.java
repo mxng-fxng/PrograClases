@@ -1,6 +1,6 @@
 package veh;
 /**
- * Especificación de Vehiculo
+ * Especificaciï¿½n de Vehiculo
  */
 public interface IVehiculo
 {
